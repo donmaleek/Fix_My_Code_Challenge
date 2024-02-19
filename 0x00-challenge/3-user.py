@@ -63,6 +63,8 @@ if __name__ == '__main__':
     user_1 = User()
     if user_1.id is None:
         print("New User should have an id")
+    user_1.password = "password123"
+    print("user password set to:", user_1.password)
 
     user_2 = User()
     if user_1.id == user_2.id:
