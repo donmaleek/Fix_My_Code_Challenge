@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
  User Model
 """
@@ -37,7 +37,7 @@ class User():
         - `None` if `pwd` is not a string
         - Hash `pwd` in MD5 before assign to `__password`
         """
-        if pwd is None or not isinstance(pwd, str):
+        if pwd is None or type(pwd) is not str:
             self.__password = None
         else:
             self.__password = hashlib.md5(pwd.encode()).hexdigest().lower()
@@ -50,11 +50,11 @@ class User():
         - `False` if `__password` is `None`
         - Compare `__password` and the MD5 value of `pwd`
         """
-        if pwd is None or not isinstance(pwd, str):
+        if pwd is None or type(pwd) is not str:
             return False
-        if self.__password is None:
+        if self.password is None:
             return False
-        return hashlib.md5(pwd.encode()).hexdigest().upper() == self.__password
+        return hashlib.md5(pwd.encode()).hexdigest().lower() == self.password
 
 
 if __name__ == '__main__':
@@ -63,8 +63,6 @@ if __name__ == '__main__':
     user_1 = User()
     if user_1.id is None:
         print("New User should have an id")
-    user_1.password = "password123"
-    print("user password set to:", user_1.password)
 
     user_2 = User()
     if user_1.id == user_2.id:
