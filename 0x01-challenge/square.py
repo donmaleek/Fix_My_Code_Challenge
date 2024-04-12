@@ -29,7 +29,7 @@ class Square():
 if __name__ == "__main__":
 
     # Create an instance of the Square class with given width and height
-    s = Square(width=12, height=9)
+    s = Square(width=12, height=12)
     # Print the string representation of the square
     print(s)
     # Print the area of the square
