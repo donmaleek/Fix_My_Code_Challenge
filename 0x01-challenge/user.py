@@ -3,28 +3,28 @@
 User class
 """
 
-class User():
+class User:
     """ Documentation """
 
     def __init__(self):
         """ Documentation """
         self.__email = None
 
+    @property
+    def email(self):
+        """ Getter for email """
+        return self.__email
+
     @email.setter
     def email(self, value):
-        """ Documentation """
+        """ Setter for email """
         if type(value) is not str:
             raise TypeError("email must be a string")
         self.__email = value
-
-    @property
-    def email(self):
-        """ Documentation """
-        return self.__email
    
     
 if __name__ == "__main__":
-
     u = User()
     u.email = "john@snow.com"
     print(u.email)
+
